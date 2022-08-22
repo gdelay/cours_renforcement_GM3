@@ -8,6 +8,8 @@
 \usepackage{geometry}
 \geometry{hmargin=3cm}
 %
+\pagestyle{empty}
+%
 \newtheorem{exercice}{\bf Exercice}
 \newtheorem{correction}{\bf Correction exercice}
 \newenvironment{exo}{
@@ -25,7 +27,7 @@
 
 \def\titre{\centerline{
 \hfill \begin{tabular}{r}
-{\bf Polytech Sorbonne - GM3}\\ 
+{\bf Polytech Sorbonne - GM3} \hspace{3cm} 
 {\bf Renforts en Math\'ematiques - Ann\'ee 2022-2023} \\ \\{}\end{tabular}     } 
 }
 
@@ -39,7 +41,7 @@
 \end{center}
 \vskip .5cm 
   
-\begin{exo}[Factoriser les expressions suivantes]
+\begin{exo} Factoriser les expressions suivantes:
 \begin{multicols}{3}
 \begin{enumerate}
 \item $6x^2 + 9x$
@@ -73,23 +75,267 @@
 
 %%%%%%%%%%%%%%%%
 
-\begin{exo}[D\'evelopper les expressions suivantes]\\
+\begin{exo} D\'evelopper les expressions suivantes:
+\begin{multicols}{2}
 \begin{enumerate}
 \item $7(x-2)+3(x+4)-6(x-2)$
+\item $4x(x+3)-2x(3x-7)$
+\item $3x^2-x(3-4x)+9$
+\item $2x^2(3x+1)-4x^2(5x-3)$
 \end{enumerate}
+\end{multicols}
 \end{exo}
 
-\begin{exo}[Factoriser les expressions suivantes]
+%%%%%%%%%%%%%%%%%
+\ifcorrige
+\color{magenta}
+\begin{cor}
+  $\qquad$
+\begin{multicols}{2}
 \begin{enumerate}
- \item $x^2 + 8x + 12$
+\item $4x+10$
+\item $4x^2+12x-6x^2+14x=-2x^2+26x$
+\item $3x^2+4x^2-3x+9=7x^2-3x+9$
+\item $6x^3+2x^2-20x^3+12x^2=-14x^3+14x^2$
 \end{enumerate}
+\end{multicols}
+\end{cor}
+\color{black}
+\fi
+
+%%%%%%%%%%%%%%%%
+
+\begin{exo} Factoriser les expressions suivantes:
+\begin{multicols}{4}
+\begin{enumerate}
+\item $x^2 + 8x + 12$
+\item $x^2 - 8x + 12$
+\item $x^2-3x-10$
+\item $x^2-x-6$
+\item $x^2+5x+6$
+\item $2x^2+5x+2$
+\item $2x^2-2x-24$
+\item $2x^2+7x-15$
+\end{enumerate}
+\end{multicols}
 \end{exo}
 
-\begin{exo}[Simplifier les expressions suivantes]
+
+%%%%%%%%%%%%%%%%%
+\ifcorrige
+\color{magenta}
+\begin{cor}
+  $\qquad$
+\begin{enumerate}
+\item On calcule le discriminant
+  $\Delta = 8^2 - 4\times 1 \times 12 = 64 - 48 = 16 > 0$.
+  Ce polyn\^ome admet donc deux racines r\'eelles distinctes
+  $\frac{-8 \pm \sqrt{\Delta}}{2}$ qui valent $-6$ et $-2$.
+  La version factoris\'ee est donc
+  \begin{equation*}
+    x^2 + 8x + 12
+    =
+    (x+6)(x+2)
+  \end{equation*}
+  (vous pouvez d\'evelopper cette expression pour v\'erifier l'\'egalit\'e)
+\item Par un changement de variable $y=-x$, on revient au polyn\^ome
+  $y^2-8y+12 = (y+6)(y+2)$ de la question pr\'ec\'edente.
+  La forme factoris\'ee est donc
+  \begin{equation*}
+    x^2 - 8x + 12
+    =
+    (x-6)(x-2)
+  \end{equation*}
+  (on peut aussi \`a nouveau calculer le discriminant)
+\item On calcule le discriminant
+  $\Delta = (-3)^2 -4 \times 1 \times (-10) = 49 > 0$.
+  Ce polyn\^ome admet donc deux racines r\'eelles distinctes donn\'ees par
+  $\frac{+3\pm \sqrt{\Delta}}{2}$ qui valent $-2$ et $5$.
+  La forme factoris\'ee est donc
+  \begin{equation*}
+    x^2-3x-10 = (x+2)(x-5)
+  \end{equation*}
+\item Le discriminant vaut $\Delta = 1 - 4 \times (-6) = 25 > 0$.
+  Ce polyn\^ome admet donc deux racines r\'eelles distinctes
+  donn\'ees par $\frac{1 \pm 5}{2}$.
+  La forme factoris\'ee est donc
+  \begin{equation*}
+    x^2-x-6 = (x+2)(x-3)
+  \end{equation*}
+\item Le discriminant vaut $\Delta = 25 - 24 = 1>0$.
+  Ce polyn\^ome admet deux racines r\'eelles $-2$ et $-3$.
+  Sa forme factoris\'ee est donc
+  \begin{equation*}
+    x^2+5x+6 = (x+2)(x+3)
+  \end{equation*}
+\item
+  Le discriminant vaut $\Delta = 9 > 0$, ce polyn\^ome admet deux racines r\'eelles
+  $\frac{-5 \pm 3}{2\times 2}$ (ne pas oublier $\times 2$ au d\'enominateur)
+  qui valent $-2$ et $-\frac12$
+  Le polyn\^ome vaut donc
+  \begin{equation*}
+    2x^2+5x+2 = 2(x+2)(x+\frac12)
+  \end{equation*}
+  (ne pas oublier de tout multiplier par le coefficient de plus haut degr\'e, ici $2$)
+\item
+  Ici, on peut simplifier un peu avec $2x^2-2x-24 = 2(x^2 -x-12)$
+  et on factorise directement $x^2-x-12 = (x-4)(x+3)$.
+  La forme factoris\'ee du polyn\^ome est donc
+  \begin{equation*}
+    2x^2-2x-24 = 2(x-4)(x+3)
+  \end{equation*}
+\item
+  Le discriminant vaut $\Delta = 7^2 - 4 \times 2 \times (-15) = 169 = 13^2$
+  Les racines valent $\frac{-7 \pm 13}{2 \times 2}$ donc $-5$ et $\frac32$.
+  La forme factoris\'ee du polyn\^ome est donc
+  \begin{equation*}
+    2x^2+7x-15 = 2(x+5)(x-\frac32)
+  \end{equation*}
+\end{enumerate}
+\end{cor}
+\color{black}
+\fi
+
+%%%%%%%%%%%%%%%%
+
+\begin{exo} Simplifier les expressions suivantes:
+\begin{multicols}{2}
 \begin{enumerate}
 \item $2 \sqrt{18} - 4 \sqrt{72} - \sqrt{50} + 3\sqrt{98}$
+\item $4\sqrt{8} -2\sqrt{75} + \sqrt{200}-3\sqrt{48}+5\sqrt{45}$
+\item $\frac1{\sqrt{5}-2}$
+\item $\frac{\sqrt{3}+\sqrt{2}}{\sqrt{3}-\sqrt{2}}$
+\item $\frac1{4\sqrt{11} -5\sqrt{7}}$
+\item $\frac{5x^2 - 125}{x^2 + 5x} \div \frac{10x^2 + 40x - 50}{3x^2}$
+\item $\frac{3}{x^2+1} - \frac{1}{x-1} + \frac{2}{(x-1)^2}$
+\item $\frac{2}{x-2} - \frac{3x+1}{x^2-7x+10} - \frac{1}{x-5}$
 \end{enumerate}
+\end{multicols}
 \end{exo}
+
+%%%%%%%%%%%%%%%%%
+\ifcorrige
+\color{magenta}
+\begin{cor}
+  $\qquad$
+\begin{enumerate}
+\item Ici, on veut r\'eduire les nombres sous les racines.
+  On utilise $\sqrt{18} = \sqrt{9} \times \sqrt{2} = 3\sqrt{2}$,
+  $\sqrt{72} = \sqrt{4} \times \sqrt{18} = \sqrt{4} \times \sqrt{9} \times \sqrt{2} = 6\sqrt{2}$,
+  $\sqrt{50} = \sqrt{25} \sqrt{2} = 5 \sqrt{2}$,
+  $\sqrt{98} = \sqrt{2} \times \sqrt{49} = 7 \sqrt{2}$.
+  On a
+  \begin{align*}
+    2 \sqrt{18} - 4 \sqrt{72} - \sqrt{50} + 3\sqrt{98}
+    &= 6 \sqrt{2} - 24 \sqrt{2} - 5 \sqrt{2} + 7 \sqrt{2}
+    \\
+    &= -16 \sqrt{2}
+  \end{align*}
+\item De m\^eme
+  $\sqrt{8} = 2 \sqrt{2}$, $\sqrt{75} = 5 \sqrt{5}$, $\sqrt{200} = 10 \sqrt{2}$,
+  $\sqrt{48} = 4 \sqrt{3}$ et $\sqrt{45} = 3 \sqrt{5}$.
+  Ainsi, on a
+  \begin{align*}
+    4\sqrt{8} -2\sqrt{75} + \sqrt{200}-3\sqrt{48}+5\sqrt{45}
+    &= 8 \sqrt{2} - 10 \sqrt{5} + 10 \sqrt{2} - 12 \sqrt{3} +15 \sqrt{5}
+    \\
+    &= 18 \sqrt{2} - 12 \sqrt{3} + 5 \sqrt{5}
+  \end{align*}
+\item Ici, on veut retirer les racines carr\'ees des d\'enominateurs.
+  On va multiplier le num\'erateur et le d\'enominateur par le "conjugu\'e" du d\'enominateur
+  (cf nombres complexes) : le conjugu\'e de $\sqrt{5}-2$ est $\sqrt{5}+2$
+  \begin{align*}
+    \frac1{\sqrt{5}-2}
+    = \frac{\sqrt{5}+2}{(\sqrt{5}-2)(\sqrt{5}+2)}= \frac{\sqrt{5}+2}{\sqrt{5}^2-2^2}
+    = \sqrt{5}+2
+  \end{align*}
+\item Comme pr\'ec\'edemment
+  \begin{align*}
+    \frac{\sqrt{3}+\sqrt{2}}{\sqrt{3}-\sqrt{2}}
+    &= \frac{(\sqrt{3}+\sqrt{2})(\sqrt{3}+\sqrt{2})}{(\sqrt{3}-\sqrt{2})(\sqrt{3}+\sqrt{2})}
+      = \frac{(\sqrt{3}+\sqrt{2})^2}{3-2}
+      = (\sqrt{3}+\sqrt{2})^2
+  \end{align*}
+
+\item
+  Comme pr\'ec\'edemment
+  \begin{align*}
+    \frac1{4\sqrt{11} -5\sqrt{7}}
+    &= \frac{4\sqrt{11}+5\sqrt{7}}{(4\sqrt{11} -5\sqrt{7})(4\sqrt{11} +5\sqrt{7})}
+    \\
+    &= \frac{4\sqrt{11}+5\sqrt{7}}{16 \times 11 - 25 \times 7}
+    \\
+    &= \frac{4\sqrt{11}+5\sqrt{7}}{176 - 175}
+    \\
+    &= 4\sqrt{11}+5\sqrt{7}
+  \end{align*}
+
+\item Ici, on simplifie en \'ecrivant tout avec une seule fraction.
+  Puis, on simplifie cette fraction en factorisant et en simplifiant les facteurs communs
+  entre num\'erateur et d\'enominateur.
+  \begin{align*}
+    \frac{5x^2 - 125}{x^2 + 5x} \div \frac{10x^2 + 40x - 50}{3x^2}
+    &= \frac{(5x^2 - 125)3x^2}{(x^2 + 5x)(10x^2 + 40x - 50)}
+    \\
+    &= \frac{15(x^2 - 25)x^2}{10x(x + 5)(x^2 + 4x - 5)}
+    \\
+    &= \frac{3(x-5)(x+5)x^2}{2x(x + 5)(x^2 + 4x - 5)}
+    \\
+    &= \frac{3(x-5)x}{2(x^2 + 4x - 5)}
+  \end{align*}
+  On peut encore simplifier un peu en factorisant le d\'enominateur.
+  Le discriminant de $x^2 + 4x - 5$ est $\Delta = 36 > 0$
+  On a donc $x^2 + 4x - 5 = (x-5)(x+1)$.
+  Finalement
+  \begin{align*}
+    \frac{5x^2 - 125}{x^2 + 5x} \div \frac{10x^2 + 40x - 50}{3x^2}
+    = \frac{3(x-5)x}{2(x-5)(x+1)}
+    = \frac{3x}{2(x+1)}
+  \end{align*}
+  
+\item Dans ce cas, on simplifie en regroupant les diff\'erentes fractions en une seule fraction.
+  Il faut donc tout mettre sous le m\^eme d\'enominateur.
+  On peut ensuite d\'evelopper le num\'erateur pour obtenir un seul monome de chaque degr\'e.
+  \begin{align*}
+    \frac{3}{x^2+1} - \frac{1}{x-1} + \frac{2}{(x-1)^2}
+    &= \frac{3(x-1)^2}{(x^2+1)(x-1)^2} - \frac{(x-1)(x^2+1)}{(x^2+1)(x-1)^2}
+      + \frac{2 (x^2+1)}{(x^2+1)(x-1)^2}
+    \\
+    &= \frac{3(x-1)^2 - (x-1)(x^2+1) + 2 (x^2 + 1 ) }{(x^2+1)(x-1)^2}
+    \\
+    &= \frac{3(x^2-2x+1) - (x^3-x^2+x-1) + 2 x^2 + 2}{(x^2+1)(x-1)^2}
+    \\
+    &= \frac{-x^3 + 6 x^2 - 7 x + 6}{(x^2+1)(x-1)^2}
+  \end{align*}
+  A ce stade, on se demande si on ne pourrait pas factoriser le num\'erateur.
+  Pour un polyn\^ome de degr\'e 3 ou plus, on ne sait pas faire autrement qu'en cherchant
+  une racine \'evidente (essayer $-2$, $-1$, $0$, $1$ et $2$).
+  Aucun de ces nombres n'est racine. On ne peut donc pas simplifier davantage.
+
+\item On applique la m\^eme m\'ethode qu'\`a la question pr\'ec\'edente.
+  De plus, pour simplifier, on va factoriser le polyn\^ome qui ne l'est pas au d\'enominateur.
+  On a
+  \begin{align*}
+    x^2-7x+10 = (x-5)(x-2)
+  \end{align*}
+  Et donc
+  \begin{align*}
+    \frac{2}{x-2} - \frac{3x+1}{x^2-7x+10} - \frac{1}{x-5}
+    &= \frac{2}{x-2} - \frac{3x+1}{(x-5)(x-2)} - \frac{1}{x-5}
+    \\
+    &= \frac{2(x-5)}{(x-2)(x-5)} - \frac{3x+1}{(x-5)(x-2)} - \frac{x-2}{(x-2)(x-5)}
+    \\
+    &= \frac{2(x-5) - (3x+1) - (x-2)}{(x-2)(x-5)}
+    \\
+    &= \frac{-2x - 9}{(x-2)(x-5)}
+  \end{align*}
+\end{enumerate}
+\end{cor}
+\color{black}
+\fi
+
+%%%%%%%%%%%%%%%%
+
 
 \begin{exo}[Trouver les solutions des \'equations suivantes]
 \begin{enumerate}
