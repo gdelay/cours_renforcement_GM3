@@ -1,0 +1,97 @@
+\documentclass[12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[frenchb]{babel}
+\usepackage{tikz}
+\usetikzlibrary{arrows}
+\usepackage{times}    
+\usepackage{amsfonts,amssymb,amsmath,amsthm}
+%
+\newtheorem{exercice}{\bf Exercice}
+\newenvironment{exo}{
+%\vskip .1cm
+\begin{exercice}\smallskip\normalfont}{\end{exercice}
+%\vskip .1cm
+} 
+ 
+
+
+\def\titre{\centerline{
+% \includegraphics[width=3cm]{su.png}
+\hfill \begin{tabular}{r}
+{\bf Polytech Sorbonne - GM3}\\ 
+{\bf Renforts en Math\'ematiques - Ann\'ee 2022-2023} \\ \\{}\end{tabular}     } 
+}
+
+
+\newif\ifcorrige\corrigetrue
+%\newif\ifcorrige\corrigefalse 
+\begin{document}
+\titre
+\begin{center}
+  \underline{\LARGE Calcul litt\'eral et racines d'\'equations}
+\end{center}
+\vskip .5cm 
+  
+\begin{exo}[Factoriser les expressions suivantes]
+\begin{enumerate}
+\item $6x^2 + 9x$
+  \ifcorrige\noindent \color{magenta}Correction :
+  $3x(2x+3)$
+  \color{black}\fi
+\item $12x^2 y + 8xy^2$
+  \ifcorrige\noindent \color{magenta}Correction :
+  $4xy(3x+2y)$
+  \color{black}\fi
+\item $15x - 20xy^2$
+  \ifcorrige\noindent \color{magenta}Correction :
+  $5x(3-4y^2)$
+  \color{black}\fi
+\item $xy^2 - x^2y$
+  \ifcorrige\noindent \color{magenta}Correction :
+  $xy(y-x)$
+  \color{black}\fi
+\item $x^2y - xy^3$
+  \ifcorrige\noindent \color{magenta}Correction :
+  $xy(x-y^2)$
+  \color{black}\fi
+\item $5x^2y - 25xy + 3y^2x$
+  \ifcorrige\noindent \color{magenta}Correction :
+  $xy(5x - 25 + 3y)$
+  \color{black}\fi
+\end{enumerate} 
+\end{exo}
+
+
+
+\begin{exo}[D\'evelopper les expressions suivantes]\\
+\begin{enumerate}
+\item $7(x-2)+3(x+4)-6(x-2)$
+\end{enumerate}
+\end{exo}
+
+\begin{exo}[Factoriser les expressions suivantes]
+\begin{enumerate}
+ \item $x^2 + 8x + 12$
+\end{enumerate}
+\end{exo}
+
+\begin{exo}[Simplifier les expressions suivantes]
+\begin{enumerate}
+\item $2 \sqrt{18} - 4 \sqrt{72} - \sqrt{50} + 3\sqrt{98}$
+\end{enumerate}
+\end{exo}
+
+\begin{exo}[Trouver les solutions des \'equations suivantes]
+\begin{enumerate}
+\item $x^2 - 4x - 8 = 0$
+\end{enumerate}
+\end{exo}
+
+\begin{exo}[Trouver les solutions des syst\`emes lin\'eaires suivants]
+\begin{enumerate}
+\item $x^2 - 4x - 8 = 0$
+\end{enumerate}
+\end{exo}
+
+\end{document}
