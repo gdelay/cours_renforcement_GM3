@@ -6,7 +6,7 @@
 \usepackage{xcolor}
 \usepackage{multicol}
 \usepackage{geometry}
-\geometry{hmargin=3cm}
+\geometry{hmargin=3cm, vmargin=3cm}
 %
 \pagestyle{empty}
 %
@@ -32,8 +32,8 @@
 }
 
 
-\newif\ifcorrige\corrigetrue
-%\newif\ifcorrige\corrigefalse 
+%\newif\ifcorrige\corrigetrue
+\newif\ifcorrige\corrigefalse 
 \begin{document}
 \titre
 \begin{center}
@@ -337,16 +337,208 @@
 %%%%%%%%%%%%%%%%
 
 
-\begin{exo}[Trouver les solutions des \'equations suivantes]
+\begin{exo} Trouver les solutions r\'eelles (\'eventuelles) des \'equations suivantes
+\begin{multicols}{2}
 \begin{enumerate}
 \item $x^2 - 4x - 8 = 0$
+\item $x^2 + 2x - 5 = 0$
+\item $x^2 + 2x + 1 = 0$
+\item $3x^2 + 3x + 1 = 0$
 \end{enumerate}
+\end{multicols}
 \end{exo}
 
-\begin{exo}[Trouver les solutions des syst\`emes lin\'eaires suivants]
+%%%%%%%%%%%%%%%%%
+\ifcorrige
+\color{magenta}
+\begin{cor}
+  $\qquad$
 \begin{enumerate}
-\item $x^2 - 4x - 8 = 0$
+\item Les solutions de cette \'equation sont les racines r\'eelles du polyn\^ome.
+  Le discriminant vaut $\Delta = 50 > 0$.
+  Cette \'equation admet donc deux solutions r\'eelles
+  $x_1 = \frac{4 - \sqrt{50}}{2} = \frac{4 - 5\sqrt{2}}{2}$
+  et
+  $x_2 = \frac{4 + \sqrt{50}}{2} = \frac{4 + 5\sqrt{2}}{2}$.
+\item Le discriminant vaut $\Delta = 24 > 0$.
+  L'\'equation admet donc deux solutions r\'eelles:
+  $x_1 = \frac{-2 - \sqrt{24}}{2} = -1 - \sqrt{6}$
+  et $x_2 = \frac{-2 + \sqrt{24}}{2} = -1 + \sqrt{6}$.
+\item Dans ce cas, le discriminant vaut $\Delta = 0$.
+  L'\'equation admet une unique solution r\'eelle : $x = -1$.
+\item Dans ce cas, le discriminant vaut $\Delta = -3 < 0$
+  et l'\'equation n'admet pas de solution r\'eelle.
 \end{enumerate}
+\end{cor}
+\color{black}
+\fi
+
+%%%%%%%%%%%%%%%%
+
+\begin{exo} Trouver les solutions des syst\`emes lin\'eaires suivants:
+\begin{multicols}{3}
+\begin{enumerate}
+\item
+  $
+    \left\{
+      \begin{array}{l}
+        x + y = 2
+        \\
+        x - y = 5
+      \end{array}
+    \right.
+  $
+\item
+  $
+    \left\{
+      \begin{array}{l}
+        3x + y = 5
+        \\
+        x + 3y = 7
+      \end{array}
+    \right.
+    $
+    \item
+  $
+    \left\{
+      \begin{array}{l}
+        5x + 2y = 11
+        \\
+        -x -4y = 5
+      \end{array}
+    \right.
+  $
+\end{enumerate}
+\end{multicols}
 \end{exo}
+
+%%%%%%%%%%%%%%%%%
+\ifcorrige
+\color{magenta}
+\begin{cor}
+  $\qquad$
+\begin{enumerate}
+\item On note (a) et (b) les deux lignes du syst\`eme.
+  On injecte (a) dans (b) (combinaison) dans le but d'\'eliminer les $y$,
+  on trouve la valeur de $x$ puis
+  on utilise cette valeur pour trouver $y$.
+  \begin{align*}
+    \left\{
+      \begin{array}{l}
+        x + y = 2
+        \\
+        x - y = 5
+      \end{array}
+    \right.
+    \iff
+    \left\{
+      \begin{array}{l}
+        x + y = 2
+        \\
+        2x = 7
+      \end{array}
+    \right.
+    \iff
+    \left\{
+      \begin{array}{l}
+        x + y = 2
+        \\
+        x = \frac72
+      \end{array}
+    \right.
+    \iff
+    \left\{
+      \begin{array}{l}
+        y = 2 - x = 2 - \frac72 = - \frac32
+        \\
+        x = \frac72
+      \end{array}
+    \right.
+  \end{align*}
+\item
+  On applique la m\^eme m\'ethode (on injecte $-3 \times$ (a) dans (b))
+  \begin{align*}
+    \left\{
+      \begin{array}{l}
+        3x + y = 5
+        \\
+        x + 3y = 7
+      \end{array}
+    \right.
+    \iff
+    \left\{
+      \begin{array}{l}
+        3x + y = 5
+        \\
+        -8x  = -8
+      \end{array}
+    \right.
+    \iff
+    \left\{
+      \begin{array}{l}
+        3x + y = 5
+        \\
+        x  = 1
+      \end{array}
+    \right.
+    \iff
+    \left\{
+      \begin{array}{l}
+        y = 5 -3x = 2
+        \\
+        x  = 1
+      \end{array}
+    \right.
+  \end{align*}
+  \item
+  On applique la m\^eme m\'ethode (on injecte $2 \times$ (a) dans (b))
+  \begin{align*}
+    \left\{
+      \begin{array}{l}
+        5x + 2y = 11
+        \\
+        -x - 4y = 5
+      \end{array}
+    \right.
+    &\iff
+    \left\{
+      \begin{array}{l}
+        5x + 2y = 11
+        \\
+        9x  = 27
+      \end{array}
+    \right.
+    \iff
+    \left\{
+      \begin{array}{l}
+        5x + 2y = 11
+        \\
+        x  = 3
+      \end{array}
+    \right.
+    \\
+    &\iff
+    \left\{
+      \begin{array}{l}
+        2y = 11 - 5x = -4
+        \\
+        x  = 3
+      \end{array}
+    \right.
+    \iff
+    \left\{
+      \begin{array}{l}
+        y = -2
+        \\
+        x  = 3
+      \end{array}
+    \right.
+  \end{align*}
+\end{enumerate}
+\end{cor}
+\color{black}
+\fi
+
+%%%%%%%%%%%%%%%%
 
 \end{document}
