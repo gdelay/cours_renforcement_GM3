@@ -2,22 +2,28 @@
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage[frenchb]{babel}
-\usepackage{tikz}
-\usetikzlibrary{arrows}
-\usepackage{times}    
 \usepackage{amsfonts,amssymb,amsmath,amsthm}
+\usepackage{xcolor}
+\usepackage{multicol}
+\usepackage{geometry}
+\geometry{hmargin=3cm}
 %
 \newtheorem{exercice}{\bf Exercice}
+\newtheorem{correction}{\bf Correction exercice}
 \newenvironment{exo}{
 %\vskip .1cm
 \begin{exercice}\smallskip\normalfont}{\end{exercice}
 %\vskip .1cm
-} 
+}
+\newenvironment{cor}{
+%\vskip .1cm
+\begin{correction}\smallskip\normalfont}{\end{correction}
+%\vskip .1cm
+}
  
 
 
 \def\titre{\centerline{
-% \includegraphics[width=3cm]{su.png}
 \hfill \begin{tabular}{r}
 {\bf Polytech Sorbonne - GM3}\\ 
 {\bf Renforts en Math\'ematiques - Ann\'ee 2022-2023} \\ \\{}\end{tabular}     } 
@@ -34,35 +40,38 @@
 \vskip .5cm 
   
 \begin{exo}[Factoriser les expressions suivantes]
+\begin{multicols}{3}
 \begin{enumerate}
 \item $6x^2 + 9x$
-  \ifcorrige\noindent \color{magenta}Correction :
-  $3x(2x+3)$
-  \color{black}\fi
 \item $12x^2 y + 8xy^2$
-  \ifcorrige\noindent \color{magenta}Correction :
-  $4xy(3x+2y)$
-  \color{black}\fi
 \item $15x - 20xy^2$
-  \ifcorrige\noindent \color{magenta}Correction :
-  $5x(3-4y^2)$
-  \color{black}\fi
 \item $xy^2 - x^2y$
-  \ifcorrige\noindent \color{magenta}Correction :
-  $xy(y-x)$
-  \color{black}\fi
 \item $x^2y - xy^3$
-  \ifcorrige\noindent \color{magenta}Correction :
-  $xy(x-y^2)$
-  \color{black}\fi
-\item $5x^2y - 25xy + 3y^2x$
-  \ifcorrige\noindent \color{magenta}Correction :
-  $xy(5x - 25 + 3y)$
-  \color{black}\fi
-\end{enumerate} 
+\item $5x^2y - 25xy + 3yx^2$
+\end{enumerate}
+\end{multicols}
 \end{exo}
 
+%%%%%%%%%%%%%%%%%
+\ifcorrige
+\color{magenta}
+\begin{cor}
+  $\qquad$
+\begin{multicols}{3}
+\begin{enumerate}
+\item $3x(2x+3)$
+\item $4xy(3x+2y)$
+\item $5x(3-4y^2)$
+\item $xy(y-x)$
+\item $xy(x-y^2)$
+\item $xy(5x - 25 + 3y)$ 
+\end{enumerate}
+\end{multicols}
+\end{cor}
+\color{black}
+\fi
 
+%%%%%%%%%%%%%%%%
 
 \begin{exo}[D\'evelopper les expressions suivantes]\\
 \begin{enumerate}
