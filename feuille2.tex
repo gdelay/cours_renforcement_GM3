@@ -1,0 +1,577 @@
+\documentclass[12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[frenchb]{babel}
+\usepackage{amsfonts,amssymb,amsmath,amsthm}
+\usepackage{xcolor}
+\usepackage{multicol}
+\usepackage{geometry}
+\geometry{hmargin=3cm, vmargin=3cm}
+%
+\pagestyle{empty}
+%
+\newtheorem{exercice}{\bf Exercice}
+\newtheorem{correction}{\bf Correction exercice}
+\newenvironment{exo}{
+%\vskip .1cm
+\begin{exercice}\smallskip\normalfont}{\end{exercice}
+%\vskip .1cm
+}
+\newenvironment{cor}{
+%\vskip .1cm
+\begin{correction}\smallskip\normalfont}{\end{correction}
+%\vskip .1cm
+}
+ 
+
+\newcommand*{\R}{\mathbb{R}}
+
+\def\titre{\centerline{
+\hfill \begin{tabular}{r}
+{\bf Polytech Sorbonne - GM3} \hspace{3cm} 
+{\bf Renforts en Math\'ematiques - Ann\'ee 2022-2023} \\ \\{}\end{tabular}     } 
+}
+
+
+\newif\ifcorrige\corrigetrue
+%\newif\ifcorrige\corrigefalse 
+\begin{document}
+\titre
+\begin{center}
+  \underline{\LARGE Fonctions r\'eelles d'une variable r\'eelle}
+\end{center}
+\vskip .5cm 
+  
+\begin{exo} Donner le domaine de d\'efinition des fonctions suivantes:
+\begin{multicols}{5}
+\begin{enumerate}
+\item $\frac1{1+x}$
+\item $\frac{3}{1+x^2}$
+\item $e^{\frac{1}{1-x}}$
+\item $\ln(1-x)$
+\item $\sqrt{-4x}$
+\end{enumerate}
+\end{multicols}
+\end{exo}
+
+%%%%%%%%%%%%%%%%%
+\ifcorrige
+\color{magenta}
+\begin{cor}
+  $\qquad$
+\begin{multicols}{3}
+\begin{enumerate}
+\item $\R \setminus \{ -1 \}$
+\item $\R$
+\item $\R \setminus \{ 1 \}$
+\item $]-\infty , 1[$
+\item $]- \infty, 0]$
+\end{enumerate}
+\end{multicols}
+\end{cor}
+\color{black}
+\fi
+
+%%%%%%%%%%%%%%%%
+
+\begin{exo} Calculer l'image des fonctions suivantes:
+\begin{multicols}{2}
+\begin{enumerate}
+\item $f(x) = 3x-2$ avec $D_f = \{ 1,2,3,4 \}$
+\item $g(x) = x^2$ avec $D_g = [-5,5]$
+\end{enumerate}
+\end{multicols}
+\end{exo}
+
+%%%%%%%%%%%%%%%%%
+\ifcorrige
+\color{magenta}
+\begin{cor}
+  $\qquad$
+\begin{multicols}{2}
+\begin{enumerate}
+\item $\text{Im}(f) = \{1,4,7,10\}$
+\item $\text{Im}(g) = [0,25]$
+\end{enumerate}
+\end{multicols}
+\end{cor}
+\color{black}
+\fi
+
+%%%%%%%%%%%%%%%%
+
+\begin{exo} Soit la fonction $f : \R \to \R$, $f(x) = 2x^2+3$.
+\begin{multicols}{2}
+\begin{enumerate}
+\item Calculer le domaine image de $f$.
+\item Trouver $z\in\R$ tel que $f(z) = 35$.
+\end{enumerate}
+\end{multicols}
+\end{exo}
+
+%%%%%%%%%%%%%%%%%
+\ifcorrige
+\color{magenta}
+\begin{cor}
+  $\qquad$
+\begin{enumerate}
+\item Lorsque $x$ parcourt $\R$, $2x^2$ parcourt $[0,+\infty[$ et donc $2x^2+3$ parcourt $[3,+\infty[$.
+  On a $\text{Im}(f) = [3,+\infty[$.
+\item Commen\c{c}ons par remarquer que $35 \in \text{Im}(f)$.
+  Il existe donc au moins un $z \in \R$ satisfaisant $f(z) = 35$.
+  On r\'esout l'\'equation suivante :
+  \begin{align*}
+    f(z) = 35
+    \iff
+    2z^2+3 = 35
+    \iff
+    2z^2 = 32
+    \iff
+    z^2 = 16
+    \iff
+    z = 4 \text{  ou  } z = -4
+  \end{align*}
+  Il existe donc deux $z \in \R$ tels que $f(z) = 35$ :
+  $z=-4$ et $z=4$.
+\end{enumerate}
+\end{cor}
+\color{black}
+\fi
+
+%%%%%%%%%%%%%%%%
+
+\begin{exo} Soient les fonctions $f(x) = (x+1)(x-2)$
+  et $g(x) = 2x$.
+\begin{multicols}{2}
+\begin{enumerate}
+\item Calculer $f \circ g$.
+\item Calculer $g \circ f$.
+\end{enumerate}
+\end{multicols}
+\end{exo}
+
+%%%%%%%%%%%%%%%%%
+\ifcorrige
+\color{magenta}
+\begin{cor}
+  $\qquad$
+\begin{enumerate}
+\item On a
+    $(f \circ g) (x) = f(g(x)) = (g(x)+1)(g(x)-2) = (2x+1)(2x-2)$
+\item On a
+    $(g \circ f) (x) = g(f(x)) = 2 f(x) = 2(x+1)(x-2)$
+\end{enumerate}
+\end{cor}
+\color{black}
+\fi
+
+%%%%%%%%%%%%%%%%
+
+
+\begin{exo} Soient les fonctions $f(x) = x^2-1$, $g(x) = 3x+2$, et $h(x) = \frac1x$.
+  R\'esoudre les \'equations suivantes sur $\R$:
+\begin{multicols}{3}
+\begin{enumerate}
+\item $(f \circ g)(x) = 15$
+\item $(g \circ g)(x) = h(x)$
+\item $(g \circ h)(x) = -4$
+\end{enumerate}
+\end{multicols}
+\end{exo}
+
+%%%%%%%%%%%%%%%%%
+\ifcorrige
+\color{magenta}
+\begin{cor}
+  $\qquad$
+\begin{enumerate}
+\item On r\'esout ce probl\`eme sur $\R$
+  \begin{align*}
+    (f \circ g)(x) = 15
+    &\iff
+    (g(x))^2-1 = 15
+    \iff
+    (3x+2)^2-1 = 15
+    \\
+    &\iff
+    (3x+2)^2 = 16
+    \iff
+    3x+2 = -4 \text{  ou  } 3x+2 = 4
+    \\
+    &\iff 3x = -6 \text{  ou  } 3x = 2
+    \iff x = -2 \text{  ou  } x = \frac23
+  \end{align*}
+  On a trouv\'e deux solutions \`a cette \'equation : $\{-2,\frac23\}$.
+  V\'erifions ce r\'esultat:
+  $(f \circ g)(-2) = f(g(-2)) = f(-4) = 15$
+  et $(f \circ g)(\frac23) = f(g(\frac23)) = f(4) = 15$
+\item On r\'esout ce probl\`eme sur $\R \setminus \{ 0 \}$
+  (car $h$ non d\'efinie en $0$).
+  \begin{align*}
+    (g \circ g)(x) = h(x)
+    &\iff
+    3(3x+2)+2 = \frac1x
+    \iff
+    9x+8 = \frac1x
+    \\
+    &\iff
+    (9x+8)x = 1
+    \iff
+    9x^2+8x -1 = 0
+  \end{align*}
+  Cherchons les racines \'eventuelles de ce polyn\^ome.
+  On calcule son discriminant:
+  $\Delta = 64 - 4 \times 9 \times (-1) = 100 > 0$.
+  Ce polyn\^ome admet donc deux racines r\'eelles:
+  $x_1 = \frac{-8 -10}{2 \times 9} = -1$ et $x_2 = \frac{-8+10}{2 \times 9} = \frac19$.
+  Ces racines sont non nulles (rappelez-vous qu'on cherche des solutions sur $\R \setminus \{ 0 \}$),
+  elles sont donc solutions de l'\'equation.
+
+\item On cherche des solutions sur $\R^*$ (car $h$ est d\'efinie sur $\R^*$)
+  \begin{align*}
+    (g \circ h)(x) = -4
+    \iff
+    \frac3x + 2 = -4
+    \iff
+    \frac3x = -6
+    \iff
+    \frac1x = -2
+    \iff
+    x = - \frac12
+  \end{align*}
+  et $- \frac12 \in \R^*$, donc cette \'equation admet pour unique solution $- \frac12$.
+\end{enumerate}
+\end{cor}
+\color{black}
+\fi
+
+%%%%%%%%%%%%%%%%
+
+
+\begin{exo} Soit la fonction $f(x) = \sqrt{2x-1}$.
+\begin{multicols}{2}
+\begin{enumerate}
+\item Donner $D_f$.
+\item Calculer $f^{-1}(x)$.
+\end{enumerate}
+\end{multicols}
+\end{exo}
+
+%%%%%%%%%%%%%%%%%
+\ifcorrige
+\color{magenta}
+\begin{cor}
+  $\qquad$
+\begin{enumerate}
+\item La fonction $y \mapsto \sqrt{y}$ est d\'efinie pour $y \geq 0$.
+  Dans notre cas, $y = 2x-1$ et $2x-1 \geq 0 \iff x \geq \frac12$.
+  Donc $D_f = [ \frac12 , + \infty [$.
+\item Calculons maintenant (si elle existe) l'inverse de $f$.
+  Pour $y \in \R$, cherchons $x \geq \frac12$ tel que
+  \begin{align*}
+    y = f(x)
+    \iff
+    y = \sqrt{2x-1}
+    \iff
+    y^2 = 2x-1
+    \iff
+    x = \frac{y^2+1}{2}
+  \end{align*}
+  De plus, on a bien $\frac{y^2+1}{2} \geq 0$.
+  Ainsi, pour chaque $y \in \R$, il existe un unique $x = \frac{y^2+1}{2} \in D_f$ tel que $f(x) = y$.
+  La fonction $f$ est donc inversible et son inverse a pour expression $f^{-1}(x) = \frac{x^2+1}{2}$.
+\end{enumerate}
+\end{cor}
+\color{black}
+\fi
+
+%%%%%%%%%%%%%%%%
+
+\begin{exo} Soient les fonctions $f(x) = 3x+2$, $g(x) = \frac1x$, $x \neq 0$.
+\begin{enumerate}
+\item 
+\begin{multicols}{3}
+\begin{enumerate}
+\item Donner $f^{-1}(x)$.
+\item Donner $g^{-1}(x)$.
+\item Donner $(g \circ f)^{-1}(x)$.
+\end{enumerate}
+\end{multicols}
+\item V\'erifier que $(g \circ f)^{-1}(x) = (f^{-1} \circ g^{-1})(x) = \frac13 (\frac1x - 2)$.
+\end{enumerate}
+\end{exo}
+
+%%%%%%%%%%%%%%%%%
+\ifcorrige
+\color{magenta}
+\begin{cor}
+  $\qquad$
+\begin{enumerate}
+\item
+\begin{enumerate}
+\item Soit $y \in \R$, cherchons $x \in \R$ tel que
+  \begin{align*}
+    f(x) = y
+    \iff
+    3x+2 = y
+    \iff
+    3x = y-2
+    \iff
+    x = \frac{y-2}{3}
+  \end{align*}
+  Pour chaque $y \in R$, il existe un unique $x = \frac{y-2}{3} \in \R$ tel que $f(x) = y$.
+  La fonction $f$ est donc inversible et on a $f^{-1}(x) = \frac{x-2}{3}$.
+\item Soit $y \in \R^*$, cherchons $x \in \R^*$ tel que
+  \begin{align*}
+    y = g(x)
+    \iff
+    y = \frac1x
+    \iff
+    x = \frac1y
+  \end{align*}
+  Pour chaque $y \in \R$, il existe un unique $x = \frac{1}{y} \in \R^*$ tel que $g(x) = y$.
+  La fonciton $g$ est donc inversible et on a $g^{-1}(x) = \frac1x$.
+
+\item On calcule $(g \circ f) (x) = \frac{1}{3x+2}$.
+  Cette fonction est d\'efinie sur $\R \setminus \{ -\frac23 \}$ et est \`a valeurs dans $\R \setminus \{ 0 \}$.
+  Soit $y \in \R \setminus \{ 0 \}$, on cherche $x \in \R \setminus \{ -\frac23 \}$
+  tel que
+  \begin{align*}
+    (g \circ f) (x) = y
+    \iff
+    \frac{1}{3x+2} = y
+    \iff
+    3x+2 = \frac1y
+    \iff
+    3x = \frac1y - 2
+    \iff
+    x = \frac1{3y} - \frac23
+  \end{align*}
+  Pour chaque $y \in \R \setminus \{ 0 \}$, il existe un unique $x = \frac1{3y} - \frac23$
+  tel que $y = (g \circ f) (x)$.
+  De plus, pour $y \neq 0$, on a bien $x = \frac1{3y} - \frac23 \neq - \frac23$.
+  La fonction $g \circ f$ est donc inversible et son inverse est donn\'ee par
+  $(g \circ f)^{-1}(x) = \frac{1}{3x} - \frac23$.
+\end{enumerate}
+\item Il ne reste qu'\`a v\'erifier
+  $(f^{-1} \circ g^{-1})(x) = \frac{1}{3x} - \frac23$.
+  Le r\'esultat vient rapidement.
+\end{enumerate}
+\end{cor}
+\color{black}
+\fi
+
+%%%%%%%%%%%%%%%%
+
+\begin{exo} Simplifier les expressions suivantes:
+\begin{multicols}{2}
+\begin{enumerate}
+\item $\log(18) - \log(24) - \log(2)$
+\item $\ln(2) + \ln(3x) - \ln (2x)$
+\item $\ln(3x^2) + \ln(2x) - \ln (6x^3)$
+\item $\log (5x^2) - \log(10x^2) + \log(4x)$
+\end{enumerate}
+\end{multicols}
+\end{exo}
+
+%%%%%%%%%%%%%%%%%
+\ifcorrige
+\color{magenta}
+\begin{cor}
+Dans tout cet exercice, on utilise $\ln(a \times b) = \ln a + \ln b$ et $\ln(a^n) = n \ln a$
+(et les m\^emes relations sont valables avec $\log$ \`a la place de $\ln$).
+\begin{enumerate}
+\item
+  \begin{align*}
+    \log(18) - \log(24) - \log(2)
+    &=
+    \log(2\times 3^2) - \log(2^3 \times 3) - \log(2)
+    \\
+    &= \log 2 + \log(3^2) - \log (2^3) - \log 3 - \log 2
+    \\
+    &= \log 2 + 2 \log 3 - 3 \log 2 - \log 3 - \log 2
+    \\
+    &= -3 \log 2 + \log 3
+  \end{align*}
+\item
+  \begin{align*}
+    \ln(2) + \ln(3x) - \ln (2x)
+    = \ln(2) + \ln(3) + \ln(x) - \ln (2) - \ln(x)
+    = \ln(3)
+  \end{align*}
+
+\item
+  \begin{align*}
+    \ln(3x^2) + \ln(2x) - \ln (6x^3)
+    &= \ln(3) + 2\ln(x) + \ln(2) + \ln(x) - \ln(6) - 3 \ln(x)
+    \\
+    &= \ln(3) + \ln(2) - \ln(2 \times 3)
+    \\
+    &= 0
+  \end{align*}
+
+\item
+  \begin{align*}
+    \log (5x^2) - \log(10x^2) + \log(4x)
+    &= \log(5) + 2 \log(x) - \log(10) - 2 \log(x) + \log(4) + \log (x)
+    \\
+    &= \log(x) + \log(5) - \log(2 \times 5) + \log(2^2)
+    \\
+    &= \log(x) + \log(2)
+  \end{align*}
+\end{enumerate}
+\end{cor}
+\color{black}
+\fi
+
+%%%%%%%%%%%%%%%%
+
+\begin{exo} R\'esoudre les \'equations suivantes:
+\begin{multicols}{3}
+\begin{enumerate}
+\item $2 \ln (x) + 1 = 5$
+\item $\ln(2x+1) = 5$
+\item $\frac14 \ln (4-3x) = 2$
+\item $\ln( e^{2x-1} ) = 36$
+\item $e^{2x+3} = 4$
+\item $e^{-2x} + 10 = 24$
+\item $e^{4x+5} = -4$
+\item $e^{2x} - 5 e^{x} + 6 = 0$
+\item $e^x + e^{-x} = 2$
+\end{enumerate}
+\end{multicols}
+\end{exo}
+
+%%%%%%%%%%%%%%%%%
+\ifcorrige
+\color{magenta}
+\begin{cor}
+$\qquad$
+\begin{enumerate}
+\item Le domaine de d\'efinition de $2 \ln (x) + 1$ est $\R^*_+$.
+  On cherche donc $x$ dans $\R_+^*$ tel que
+  \begin{align*}
+    2 \ln (x) + 1 = 5
+    \iff
+    2 \ln (x) = 4
+    \iff
+    \ln(x) = 2
+    \iff
+    x = e^{2}
+  \end{align*}
+  (l'\'equivalence lors de l'application de $\exp$ vient du fait que la fonction exponentielle
+  est une bijection de $\R$ vers $\R_+^*$)
+
+  Il existe une unique solution $e^2 \in \R_+^*$ \`a cette \'equation.
+
+\item Le domaine de d\'efinition de $\ln(2x+1)$ est $]-\frac12 , + \infty[$.
+  On cherche donc $x > -\frac12$ tel que
+  \begin{align*}
+    \ln(2x+1) = 5
+    \iff
+    2x+1 = e^5
+    \iff
+    2x = e^5 - 1
+    \iff
+    x = \frac{e^5 - 1}{2}
+  \end{align*}
+  (l'\'equivalence lors de l'application de $\exp$ vient du fait que la fonction exponentielle
+  est une bijection de $\R$ vers $\R_+^*$)
+
+\item La fonction $\frac14 \ln (4-3x)$ est d\'efinie sur $]-\infty , \frac43 [$.
+  On cherche $x < \frac43$ tel que
+  \begin{align*}
+    \frac14 \ln (4-3x) = 2
+    \iff
+    \ln (4-3x) = 8
+    \iff
+    4 - 3x = e^8
+    \iff
+    -3x = e^8 - 4
+    \iff
+    x = \frac43 - \frac{e^8}{3}
+  \end{align*}
+
+\item $e^{2x-1}$ est \`a valeur dans $\R_+^*$ o\`u $\ln$ est d\'efinie.
+  La fonction $\ln( e^{2x-1} )$ est d\'efinie sur $\R$ et on a $\ln( e^{2x-1} ) = 2x-1$.
+  On cherche $x \in \R$ tel que
+  \begin{align*}
+    \ln( e^{2x-1} ) = 36
+    \iff
+    2x-1 = 36
+    \iff
+    x = \frac{37}2
+  \end{align*}
+
+\item
+  \begin{align*}
+    e^{2x+3} = 4
+    \iff
+    2x+3 = \ln(4)
+    \iff
+    x = \frac{\ln(4) - 3}{2}
+  \end{align*}
+  (l'\'equivalence lors de l'application de $\ln$ vient du fait que cette fonction
+  est une bijection de $\R_+^*$ vers $\R$)
+
+\item
+  \begin{align*}
+    e^{-2x} + 10 = 24
+    \iff
+    e^{-2x} = 14
+    \iff
+    -2x = \ln(14)
+    \iff
+    x = - \frac12 \ln(14)
+  \end{align*}
+  (l'\'equivalence lors de l'application de $\ln$ vient du fait que cette fonction
+  est une bijection de $\R_+^*$ vers $\R$)
+
+\item La fonction exponentielle est \`a valeurs dans $\R_+^*$ et $-4 \notin \R_+^*$.
+  Il n'existe donc aucun $x \in \R$ tel que $e^{4x+5} = -4$ : cette \'equation n'a pas de solution.
+
+\item On effectue le changement de variables $t = e^x$.
+  \begin{align*}
+    e^{2x} - 5 e^{x} + 6 = 0
+    \iff
+    t^2 - 5 t + 6 = 0
+  \end{align*}
+  On calcule le discriminant de ce polyn\^ome:
+  $\Delta = 25 - 24 = 1 > 0$.
+  Ce polyn\^ome admet donc deux racines r\'eelles
+  $t_1 = \frac{5-1}{2} = 2$ et $t_2 = \frac{5+1}{2} = 3$.
+  Donc 
+  \begin{align*}
+    e^{2x} - 5 e^{x} + 6 = 0
+    \iff
+    e^x = 2 \text{  ou  } e^x = 3
+    \iff
+    x = \ln(2) \text{  ou  } x = \ln(3)
+  \end{align*}
+  Cette \'equation admet deux solutions : $\ln(2)$ et $\ln(3)$.
+\item On effectue le changement de variables $t = e^x$.
+  \begin{align*}
+    e^x + e^{-x} = 2
+    \iff
+    e^{2x} - 2 e^x + 1 = 0
+    \iff
+    t^2 - 2 t + 1 = 0
+  \end{align*}
+  On calcule le discriminant de ce polyn\^ome :
+  $\Delta = 0$. Il admet donc une unique racine (double) : $t_0 = -1$.
+  Donc
+  \begin{align*}
+    e^x + e^{-x} = 2
+    \iff
+    e^x = -1
+  \end{align*}
+  On a $e^x > 0$ et donc on ne peut pas avoir $e^x = -1$.
+  Cette \'equation n'admet donc aucune solution.
+\end{enumerate}
+\end{cor}
+\color{black}
+\fi
+
+%%%%%%%%%%%%%%%%
+
+\end{document}
