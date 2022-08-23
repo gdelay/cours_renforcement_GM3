@@ -574,4 +574,214 @@ $\qquad$
 
 %%%%%%%%%%%%%%%%
 
+\begin{exo} Tracer les graphes des fonctions suivantes:
+\begin{multicols}{5}
+\begin{enumerate}
+\item $\ln(x)+1$
+\item $\ln(x-2)$
+\item $\ln(-x)$
+\item $\ln(x+2)$
+\item $\ln(1-x)$
+\end{enumerate}
+\end{multicols}
+\end{exo}
+
+%%%%%%%%%%%%%%%%%
+\ifcorrige
+\color{magenta}
+\begin{cor}
+$\qquad$
+\begin{enumerate}
+\item Faire les tracer avec tikz ...
+\end{enumerate}
+\end{cor}
+\color{black}
+\fi
+
+%%%%%%%%%%%%%%%%
+
+
+\begin{exo} Pour des r\'eels $a$, $b$ et $\beta$ ($\beta \neq 0$), calculer la d\'eriv\'ee des fonctions suivantes ($x$ est la variable):
+\begin{multicols}{4}
+\begin{enumerate}
+\item $a^{x^2}$ ($a>0$)
+\item $(ax+b)^{\beta}$
+\item $\ln(ax+b)$
+\item $e^{ax+b}$
+\item $\cos(ax+b)$
+\item $\sin(ax+b)$
+\item $\tan(x)$
+\item $\frac{e^x + e^{-x}}{2}$
+\item $\frac{e^x - e^{-x}}{2}$
+%\item $\frac{e^x - e^{-x}}{e^x + e^{-x}}$
+\item $\arcsin(x)$
+\item $\arccos(x)$
+\item $\arctan(x)$
+\end{enumerate}
+\end{multicols}
+\end{exo}
+
+%%%%%%%%%%%%%%%%%
+\ifcorrige
+\color{magenta}
+\begin{cor}
+$\qquad$
+\begin{enumerate}
+\item Il s'agit de la compos\'ee des fonctions $f(x) = a^x = e^{x \ln(a)}$ et $g(x) = x^2$.
+  Leurs d\'eriv\'ees valent $f'(x) = \ln(a) a^x$ et $g'(x) = 2x$.
+  La d\'eriv\'ee de la fonction $a^{x^2} = (f \circ g)(x)$ vaut donc
+  $f'(g(x)) \times g'(x) = 2 \ln(a) x a^{x^2}$.
+
+\item On a $(ax+b)^{\beta} = e^{\beta \ln(ax+b) } = (f \circ g)(x)$
+  avec $f(x) = x^{\beta} = e^{\beta \ln(x)}$ et $g(x) = ax+b$.
+  Les d\'eriv\'ees de ces fonctions valent
+  $f'(x) = \beta e^{\beta \ln(x)} \times \frac1x = \beta x^{\beta - 1}$
+  et $g'(x) = a$.
+  La d\'eriv\'ee de cette fonction vaut donc
+  $f'(g(x)) \times g'(x) = \beta a (ax+b)^{\beta - 1}$.
+
+\item On note $f(x) = \ln(ax+b)$.
+  Par d\'eriv\'ee d'une compos\'ee de fonctions, on a $f'(x) = \frac{a}{ax+b}$.
+
+\item On note $f(x) = e^{ax+b}$. Par deriv\'ee d'une compos\'ee de fonctions, on a
+  $f'(x) = a e^{ax+b}$.
+
+\item Idem:
+  $- a \sin(ax+b)$
+
+\item Idem: $a \cos(ax+b)$
+
+\item On \'ecrit la fonction $\tan$ comme $\tan(x) = \frac{\sin(x)}{\cos(x)}$.
+  En d\'erivant le quotient de fonctions, on a
+  \begin{align*}
+    \tan'(x) = \frac{\sin'(x)}{\cos(x)} - \frac{\cos'(x)\sin(x)}{\cos^2(x)}
+    = 1 - \frac{\sin^2(x)}{\cos^2(x)} = 1 - \tan^2(x) .
+  \end{align*}
+
+\item Il s'agit de la fonction $\cosh(x) = \frac{e^x + e^{-x}}{2}$.
+  On obtient facilement $\cosh'(x) = \frac{e^x - e^{-x}}{2} = \sinh(x)$.
+
+\item Il s'agit de la fonction $\sinh(x) = \frac{e^x - e^{-x}}{2}$.
+  On obtient facilement $\sinh'(x) = \frac{e^x + e^{-x}}{2} = \cosh(x)$.
+
+\item L'arcsinus est d\'efini comme \'etant la fonction inverse du sinus.
+  Sur un certain intervalle, on a $\arcsin(\sin(x)) = x$.
+  En d\'erivant cette expression, on obtient
+  $\arcsin'(\sin(x)) \cos(x) = 1$
+  et donc
+  $\arcsin'(\sin(x)) = \frac{1}{\sqrt{1-\sin^2(x)}}$.
+  Notez que l'on a utilis\'e la formule de trigonom\'etrie $\cos^2(x) + \sin^2(x) = 1$.
+  Par changement de variables, on a alors
+  $\arcsin'(x) = \frac{1}{\sqrt{1-x^2}}$.
+
+  Notez que l'on peut aussi utiliser la formule de la d\'eriv\'ee de l'inverse d'une fonction:
+  $(f^{-1})'(x) = \frac{1}{f'(f^{-1}(x))} = \frac{1}{\cos(\arcsin(x))}$ avec $f(x) = \sin(x)$.
+  De plus, pour compl\'eter cette d\'emonstration, on peut montrer que $\cos(\arcsin(x)) = \sqrt{1 - x^2}$ :
+  ces deux foncitons ont la m\^eme image en $0$ et ont pour d\'eriv\'ee ...
+
+  !! TODO : voir comment montrer cette \'egalit\'e.
+
+\item L'arccosinus est d\'efini comme \'etant l'inverse de la fonction cosinus.
+  On peut utiliser la m\^eme m\'ethodologie qu'\`a la question pr\'ec\'edente.
+  Sur un certain intervalle $\arccos(\cos(x)) = x$. En d\'erivant:
+  $- \sin(x) \arccos'(\cos(x)) = 1$ et donc
+  $\arccos'(\cos(x)) = \frac{-1}{\sin(x)} = \frac{-1}{\sqrt{1-\cos^2(x)}}$
+  et donc $\arccos'(x) = \frac{-1}{\sqrt{1-x^2}}$.
+
+  !! Nettoyer la d\'emo pour l'inverse des fonctions trigo :
+  il faut notamment sp\'ecifier les itervalles sur lesquels on travaille.
+
+\item De la m\^eme fa\c{c}on :
+  $\arctan(\tan(x)) = x$
+  et donc
+  $\arctan'(\tan(x)) (1-\tan^2(x)) = 1$
+  et donc $\arctan'(x) = \frac{1}{1-x^2}$.
+\end{enumerate}
+\end{cor}
+\color{black}
+\fi
+
+%%%%%%%%%%%%%%%%
+
+
+\begin{exo} Calculer la limite en $+\infty$ des fonctions suivantes:
+\begin{multicols}{3}
+\begin{enumerate}
+\item $3x^4 - x^3 + 5x^2 + x - 1$
+\item $\frac{3x^2-2x+1}{x+4}$
+\item $\frac{x^3-4x^2+1}{x^5+2}$
+\item $\frac{3x+\sqrt{x}}{x-1}$
+\item $\sqrt{x^2+4x-1} - 2x$
+\item $\sqrt{x+1} - \sqrt{x-1}$
+\end{enumerate}
+\end{multicols}
+\end{exo}
+
+%%%%%%%%%%%%%%%%%
+\ifcorrige
+\color{magenta}
+\begin{cor}
+$\qquad$
+\begin{enumerate}
+\item La limite en l'infini d'un polyn\^ome est donn\'ee par son mon\^ome de plus haut degr\'e.
+  Comme $\lim_{x \to + \infty} 3x^4 = + \infty$,
+  alors on a $\lim_{x \to + \infty} 3x^4  - x^3 + 5x^2 + x - 1= + \infty$.
+
+\item La limite en l'infini d'un quotien de polyn\^omes est donn\'ee par la limite
+  du quotien des mon\^omes de plus haut degr\'e.
+  Ainsi, $\lim_{x \to +\infty}\frac{3x^2-2x+1}{x+4} = \lim_{x \to +\infty}\frac{3x^2}{x} = + \infty$
+
+  !! quotien ou quotient ??
+
+\item Idem:
+  $\lim_{x \to + \infty} \frac{x^3-4x^2+1}{x^5+2} = \lim_{x \to + \infty} \frac{x^3}{x^5} = 0$.
+
+\item Ici on peut s\'eparer la fraction en deux :
+  $\frac{3x+\sqrt{x}}{x-1} = \frac{3x}{x-1} + \frac{\sqrt{x}}{x-1}$.
+  De plus, $\lim_{x \to + \infty}\frac{3x}{x-1} = 3$
+  et $\lim_{x \to + \infty}\frac{\sqrt{x}}{x-1}
+  = \lim_{x \to + \infty}\frac{1}{\sqrt{x}-\frac1{\sqrt{x}}} = 0$.
+  Ainsi, en sommant les deux limites : $\lim_{x \to +\infty}\frac{3x+\sqrt{x}}{x-1} = 3$.
+
+\item On peut traiter ce cas en majorant la fonction.
+  On a, pour $x$ suffisamment grand, $x^2 + 4x - 1 \leq \frac94 x^2$ et donc
+  (par croissance de la racine carr\'ee)
+  $\sqrt{x^2 + 4x - 1} \leq \frac32 x$.
+  Ainsi, pour $x$ suffisamment grand, $\sqrt{x^2 + 4x - 1} - 2x \leq - \frac{x}2$.
+  On a, de plus, $\lim_{x \to +\infty} - \frac{x}2 = -\infty$.
+  Par majoration, on a donc $\lim_{x \to +\infty} \sqrt{x^2 + 4x - 1} - 2x = -\infty$.
+
+\item !! TODO !!
+  
+\end{enumerate}
+\end{cor}
+\color{black}
+\fi
+
+%%%%%%%%%%%%%%%%
+
+
+\begin{exo} Calculer les limites suivantes:
+\begin{multicols}{3}
+\begin{enumerate}
+\item de $\frac{x^2-4x+3}{x^2+3x-4}$ en $x=1$
+\item de $\frac{\cos(x) - 1}{x}$ en $x=0$
+\end{enumerate}
+\end{multicols}
+\end{exo}
+
+%%%%%%%%%%%%%%%%%
+\ifcorrige
+\color{magenta}
+\begin{cor}
+$\qquad$
+\begin{enumerate}
+\item !! TODO !!
+\end{enumerate}
+\end{cor}
+\color{black}
+\fi
+
+%%%%%%%%%%%%%%%%
+
 \end{document}
