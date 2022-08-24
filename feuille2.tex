@@ -103,7 +103,7 @@
 \begin{exo} Soit la fonction $f : \R \to \R$, $f(x) = 2x^2+3$.
 \begin{multicols}{2}
 \begin{enumerate}
-\item Calculer le domaine image de $f$.
+\item Calculer l'ensemble image de $f$.
 \item Trouver $z\in\R$ tel que $f(z) = 35$.
 \end{enumerate}
 \end{multicols}
@@ -751,7 +751,12 @@ $\qquad$
   On a, de plus, $\lim_{x \to +\infty} - \frac{x}2 = -\infty$.
   Par majoration, on a donc $\lim_{x \to +\infty} \sqrt{x^2 + 4x - 1} - 2x = -\infty$.
 
-\item !! TODO !!
+\item Notons $f(x) = \sqrt{x}$.
+  On cherche donc la limite en $+\infty$ de $f(x+1) - f(x-1)$.
+  D'apr\`es l'in\'egalit\'e des accroissements finis,
+  on a pour $x \geq a$, $| f(x+1) - f(x-1) | \leq 2 \sup_{z \in [x-1, x+1]} |f'(z)|$.
+  Or $f'(z) = \frac{1}{2\sqrt{z}}$ et ainsi $\lim_{x \to +\infty} \sup_{z \in [x-1, x+1]} |f'(z)| = 0$
+  et donc $\lim_{x \to +\infty} f(x+1) - f(x-1) = 0$.
   
 \end{enumerate}
 \end{cor}
@@ -762,7 +767,7 @@ $\qquad$
 
 
 \begin{exo} Calculer les limites suivantes:
-\begin{multicols}{3}
+\begin{multicols}{2}
 \begin{enumerate}
 \item de $\frac{x^2-4x+3}{x^2+3x-4}$ en $x=1$
 \item de $\frac{\cos(x) - 1}{x}$ en $x=0$
@@ -776,7 +781,18 @@ $\qquad$
 \begin{cor}
 $\qquad$
 \begin{enumerate}
-\item !! TODO !!
+\item Si la fonction \'etait d\'efinie en $1$, il suffirait de l'\'evaluer pour obteir sa limite.
+  Ici cette fonction est une fraction, le num\'erateur et le d\'enominateur tendent tous les deux vers z\'ero
+  quand $x \to 1$ (et ce sont des polyn\^omes).
+  On peut donc mettre $x-1$ en facteur et simplifier.
+  On a $x^2-4x+3 = (x-1)(x-3)$ et $x^2+3x-4 = (x-1)(x+4)$.
+  Ainsi, $\frac{x^2-4x+3}{x^2+3x-4} = \frac{x-3}{x+4}$
+  et donc $\lim_{x \to 1} \frac{x^2-4x+3}{x^2+3x-4} = \lim_{x \to 1} \frac{x-3}{x+4} = - \frac25$.
+
+\item Pour cette question, nous allons faire un d\'eveloppement limit\'e du cosinus en $0$:
+  $\cos(x) = 1 - \frac{x^2}{2} + O(x^4)$ et donc
+  $\frac{\cos(x) - 1}{x} = - \frac{x}{2} + O(x^3)$
+  et donc $\lim_{x \to 0} \frac{\cos(x)-1}{x} = 0$.
 \end{enumerate}
 \end{cor}
 \color{black}
@@ -784,4 +800,167 @@ $\qquad$
 
 %%%%%%%%%%%%%%%%
 
+
+\begin{exo} \'Etudier les fonctions suivantes et tracer leur graphe:
+\begin{multicols}{4}
+\begin{enumerate}
+\item $\frac{x}{x-2}$
+\item $\cosh(x)$
+\item $\sinh(x)$
+\item $\tanh(x)$
+\end{enumerate}
+\end{multicols}
+
+!! Ajouter d'autres fonctions ??
+\end{exo}
+
+%%%%%%%%%%%%%%%%%
+\ifcorrige
+\color{magenta}
+\begin{cor}
+$\qquad$
+\begin{enumerate}
+\item Cette fonction $f$ est d\'efinie sur $]-\infty,2[\cup]2,+\infty[$.
+  $\lim_{x \to 2^-} \frac{x}{x-2} = - \infty$
+  et $\lim_{x \to 2^+} \frac{x}{x-2} = + \infty$.
+  Sa d\'eriv\'ee vaut
+  $f'(x) = \frac{x-2 - x}{(x-2)^2} = \frac{-2}{(x-2)^2} < 0$.
+  On peut donc tracer son tableau de variations.
+
+  !! TODO !!
+
+\item La fonction $\cosh(x) = \frac{e^x + e^{-x}}{2}$ est d\'efinie sur $\R$ entier.
+  Sa d\'eriv\'ee vaut $\sinh(x)$ qui est n\'egative sur $\R_-^*$ et positive sur $\R_+^*$.
+  De plus, on remarque que la fonction $\cosh$ est paire.
+
+  !! TODO !!
+
+\item La fonction $\sinh(x) = \frac{e^x - e^{-x}}{2}$ est d\'efinie sur $\R$ entier.
+  Sa d\'eriv\'ee vaut $\cosh(x)$ qui est toujours positive.
+  De plus, on remarque que la fonction $\sinh$ est impaire.
+
+  !! TODO !!
+
+\item La fonction $\tanh(x) = \frac{\sinh(x)}{\cosh(x)} = \frac{e^x - e^{-x}}{e^x + e^{-x}}$
+  est d\'efinie sur $\R$ entier.
+  Sa d\'eriv\'ee vaut $\tanh'(x) = 1 - \tanh^2(x)$.
+  De plus, on remarque que $-1 < \tanh(x) < 1$ pour tout $x \in \R$
+  et donc cette fonction est strictement croissante.
+  On peut de plus montrer qu'elle est impaire.
+
+  !! TODO !!
+\end{enumerate}
+\end{cor}
+\color{black}
+\fi
+
+%%%%%%%%%%%%%%%%
+
+
+\begin{exo} Soit une constante $\alpha \in \R^*$. Donner une primitive de chacune des fonctions suivantes:
+\begin{multicols}{4}
+\begin{enumerate}
+\item $\sin(\alpha x)$
+\item $\cos(\alpha x)$
+\item $\frac{1}{\alpha x}$
+\item $e^{-\alpha x}$
+\item $x^{\frac1{\alpha}}$
+\item $\sqrt{\alpha x}$
+\item $\frac1{\sqrt{\alpha x}}$
+\item $\frac{1}{\sqrt{\alpha^2-x^2}}$
+\item $\frac{1}{\alpha^2 + x^2}$
+\item $\ln(x)$
+\item $x \ln(x)$
+\item $x \cos(x)$
+\end{enumerate}
+\end{multicols}
+\end{exo}
+
+%%%%%%%%%%%%%%%%%
+\ifcorrige
+\color{magenta}
+\begin{cor}
+Tous les r\'esultats de cette section peuvent \^etre v\'erifi\'es en d\'erivant la primitive
+pour retrouver la fonction initiale.
+\begin{enumerate}
+\item $- \frac{1}{\alpha} \cos(\alpha x)$
+\item $\frac{1}{\alpha} \sin(\alpha x)$
+\item $\frac{1}{|\alpha|} \ln(|\alpha x|)$
+  Attention pour celui-ci : la fonction $\frac{1}{\alpha x}$ est d\'efinie sur $\R^*$
+  tandis que le logarithme est d\'efini seulement sur $\R_+^*$.
+  Il faut donc pouvoir envisager le cas $\alpha x<0$ et c'est pour cela qu'il ne faut pas oublier les valeurs
+  absolues.
+\item $- \frac{1}{\alpha}e^{-\alpha x}$
+\item Si $\alpha \neq -1$ alors la primitive vaut $\frac{\alpha}{\alpha+1} x^{1+\frac{1}{\alpha}}$.
+  Si $\alpha = -1$, alors la primitive de $\frac{1}{x}$ est $\ln(|x|)$.
+\item $\sqrt{\alpha x} = (\alpha x)^{\frac12}$ et donc la primitive de cette fonction vaut
+  $\frac2{3\alpha} (\alpha x)^{\frac32}$.
+\item De m\^eme, $\frac{1}{\sqrt{\alpha x}} = (\alpha x)^{-\frac12}$
+  et donc sa primitive vaut
+  $\frac{2}{\alpha}(\alpha x)^{\frac12}$.
+\item Pour cette primitive, il faut reconna\^itre la d\'eriv\'ee de l'arcsinus :
+  $\arcsin'(x) = \frac{1}{\sqrt{1-x^2}}$.
+  Ainsi, on a $\frac{1}{\sqrt{\alpha^2-x^2}} = \frac{1}{|\alpha|\sqrt{1-(\frac{x}{\alpha})^2}}$.
+  Et donc la primitive recherch\'ee vaut
+  $\frac{\alpha}{|\alpha|}\arcsin(\frac{x}{\alpha})$.
+\item On rappelle la d\'eriv\'ee de l'arctangente: $\arctan'(x) = \frac{1}{1+x^2}$.
+  De plus, $\frac{1}{\alpha^2 + x^2} = \frac{1}{\alpha^2(1 + (\frac{x}{\alpha})^2)}$
+  et donc la primitive de cette fonction vaut
+  $\frac{1}{\alpha}\arctan(\frac{x}{\alpha})$.
+\item On utilise une int\'egration par parties pour cette primitive (on d\'erive $\ln(t)$ et on primitive $1$)
+  \begin{align*}
+    \int^x 1 \ln(t) = [t \ln(t)]^x - \int^x 1 = x \ln(x) - x
+  \end{align*}
+  Une primitive de $\ln(x)$ est donc $x \ln(x) - x$
+  (on peut v\'erifier ce r\'esultat en d\'erivant cette fonction).
+
+\item A nouveau, on utilise une int\'egration par parties
+  (on d\'erive $\ln(t)$ et on primitive $t$)
+  \begin{align*}
+    \int^x t \ln(t) = [\frac{t^2}{2} \ln(t)]^x - \int^x \frac{t^2}{2} \times \frac{1}{t}
+    = \frac{x^2}{2} \ln(x) - \frac{x^2}{4}
+  \end{align*}
+
+\item Encore une fois, on utilise une int\'egration par parties.
+  On d\'erive $t$ et on primitive $\cos(t)$:
+  \begin{align*}
+    \int^x t \cos(t) = [t\sin(t)]^x - \int^x \sin(t)
+    = x \sin(x) + \cos(x)
+  \end{align*}
+\end{enumerate}
+\end{cor}
+\color{black}
+\fi
+
+%%%%%%%%%%%%%%%%
+
+
+
+\begin{exo} Calculer les int\'egrales suivantes:
+\begin{multicols}{3}
+\begin{enumerate}
+\item $\int_0^{\pi} \sin(x) \;dx$
+\item $\int_0^{+\infty} e^{-x} \;dx$
+\item $\int_0^{\pi} x \sin(x) \;dx$
+\end{enumerate}
+\end{multicols}
+\end{exo}
+
+%%%%%%%%%%%%%%%%%
+\ifcorrige
+\color{magenta}
+\begin{cor}
+$\qquad$
+\begin{enumerate}
+\item $\int_0^{\pi} \sin(x) \;dx = [-\cos(x)]_0^{\pi} = -\cos(\pi) + \cos(0) = 2$
+\item $\int_0^{+\infty} e^{-x} \;dx = [-e^{-x}]_0^{+\infty} = 1$
+\item Ici, on utilise une int\'egration par parties.
+  $\int_0^{\pi} x \sin(x) \;dx = [-x \cos(x)]_0^{\pi} - \int_0^{\pi} - \cos(x) \;dx
+  = \pi + [\sin(x)]_0^{\pi} = \pi$
+\end{enumerate}
+\end{cor}
+\color{black}
+\fi
+
+%%%%%%%%%%%%%%%%
 \end{document}
