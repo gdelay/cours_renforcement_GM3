@@ -1,0 +1,251 @@
+\documentclass[12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[frenchb]{babel}
+\usepackage{amsfonts,amssymb,amsmath,amsthm}
+\usepackage{xcolor}
+\usepackage{multicol}
+\usepackage{geometry}
+\geometry{hmargin=3cm, vmargin=3cm}
+%
+\pagestyle{empty}
+%
+\newtheorem{exercice}{\bf Exercice}
+\newtheorem{correction}{\bf Correction exercice}
+\newenvironment{exo}{
+%\vskip .1cm
+\begin{exercice}\smallskip\normalfont}{\end{exercice}
+%\vskip .1cm
+}
+\newenvironment{cor}{
+%\vskip .1cm
+\begin{correction}\smallskip\normalfont}{\end{correction}
+%\vskip .1cm
+}
+ \newcommand{\I}{{ \vec{i}}}
+ \newcommand{\J}{{ \vec{j}}}
+ \newcommand{\K}{{ \vec{k}}}
+
+
+\def\titre{\centerline{
+\hfill \begin{tabular}{r}
+{\bf Polytech Sorbonne - GM3} \hspace{3cm} 
+{\bf Renforts en Math\'ematiques - Ann\'ee 2022-2023} \\ \\{}\end{tabular}     } 
+}
+
+
+\newif\ifcorrige\corrigetrue
+%\newif\ifcorrige\corrigefalse 
+\begin{document}
+\titre
+\begin{center}
+  \underline{\LARGE Calcul Vectoriel dans $\mathbb R ^2$ et $\mathbb R ^3$}
+\end{center}
+\vskip .5cm 
+  
+  Dans cette feuille, on notera $\I=(1,0);\ \J=(0,1)$ dans $\mathbb R^2$ et 
+  $$\I=(1,0,0);\ \J=(0,1,0); \K=(0,0,1)$$ dans $\mathbb R^3$. Si ${\bf x}=(u,v,w)$ on notera sa norme (ou sa longueur) par
+  $$\Vert {\bf x}\Vert= \sqrt{u^2+v^2+w^2}.$$
+  Si ${\bf x},{\bf y}$ sont deux vecteurs, on notera par ${\bf x}.{\bf y}$ leur produit scalaire et ${\bf x}\wedge {\bf y}$ leur produit vectoriel.
+  
+\begin{exo} Se donnant ${\bf a}=9\I+7\J$, ${\bf b}=11 \I-3 \J$, ${\bf c}=-8\I-\J$, exprimer les vecteurs suivants en fonction de $\I$ et $\J$.
+\begin{multicols}{3}
+\begin{enumerate}
+\item ${\bf a}-2{\bf b}$
+\item ${\bf a}+{\bf b}+{\bf c}$
+\item $2{\bf a}-{\bf b}+{\bf c}$
+\end{enumerate}
+\end{multicols}
+\end{exo}
+
+%%%%%%%%%%%%%%%%%
+\ifcorrige
+\color{magenta}
+\begin{cor}
+  $\qquad$ 
+  On trouve ${\bf a}-2{\bf b}=-13\I+13\J$, ${\bf a}+{\bf b}+{\bf c}=12\I+3\J$,  $2{\bf a}-{\bf b}+{\bf c}=-\I+16\J$.
+\end{cor}
+\color{black}
+\fi
+
+
+%%%%%%%%%%%%%%%%
+\begin{exo}
+ Se donnant les vecteurs ${\bf a}=(1,3,2)$, ${\bf b}=(1,-5,6)$, ${\bf c}=(2,1,-2)$, trouver les coefficients $pq,r$ tels que
+ $$p {\bf a}+q {\bf b}+r{\bf c}=(4,10,-8).$$
+\end{exo}
+
+\ifcorrige
+\color{magenta}
+\begin{cor}
+  $\qquad$ 
+  En calculant coordonn\'ees par coordonn\'ees, on a
+  $$p {\bf a}+q {\bf b}+r{\bf c}=(4,10,-8) \Leftrightarrow 
+  \left \{ \begin{array}{ccc}
+  p+q+2r&=&4\\
+  3p-5q+r&=&10\\
+  2p+6q-2r&=&-8   
+  \end{array}    \right.$$
+  En faisant $L_2 \leftarrow L_2-3L_1$ et $L_3\leftarrow L_3-2L_1$ on a alors 
+  $$\left \{ \begin{array}{ccc}
+  p+q+2r&=&4\\
+  -8q-5r&=&-2\\
+  4q-6r&=&-16   
+  \end{array}    \right.$$
+  En faisant $L_3\leftarrow 2L_3+L_2$ on a ensuite
+  $$\left \{ \begin{array}{ccc}
+  p+q+2r&=&4\\
+  -8q-5r&=&-2\\
+  -17r&=&-34   
+  \end{array}    \right.$$
+  En "remontant" dans le syst\`eme on trouve $p=1$, $q=-1$, $r=2$.
+
+\end{cor}
+\color{black}
+\fi
+\begin{exo} Pour chacun des vecteurs ${\bf a}$ suivants, calculer $\Vert {\bf a }\Vert$ et trouver l'unique vecteur unitaire associ\'e.
+\begin{multicols}{3}
+\begin{enumerate}
+\item ${\bf a}=3\I-\J+2\K$.
+\item ${\bf a}=-2\I-6\J-\K$.
+\item ${\bf a}=\I-2\K$.
+\end{enumerate}
+\end{multicols}
+\end{exo}
+
+\ifcorrige
+\color{magenta}
+\begin{cor}
+  $\qquad$ 
+  Dans chaque cas, on calcule $\Vert {\bf a} \Vert$ puis $\vec{n}=\frac{{\bf a}}{\Vert {\bf a} \Vert}$. On trouve
+  $$\vec{n}=\left(\frac{3}{\sqrt{14}}, \frac{-1}{\sqrt{14}},\frac{2}{\sqrt{14}}\right),\ \vec{n}=\left(\frac{-2}{\sqrt{41}}, \frac{-6}{\sqrt{41}},\frac{-1}{\sqrt{41}}\right),\ \vec{n}=\left(\frac{1}{\sqrt{5}}, 0,\frac{-2}{\sqrt{5}}\right).$$
+\end{cor}
+\color{black}
+\fi
+
+\begin{exo} Trouver les vecteurs $\bf x$ de norme donn\'ee dans les directions suivantes:
+\begin{enumerate}
+\item de norme $8$ dans la direction $\I+2\J+4\K$,
+\item de norme $5$ dans la direction oppos\'ee au vecteur $-\I+2\J+3\K$.
+\end{enumerate}
+\end{exo}
+
+\ifcorrige
+\color{magenta}
+\begin{cor}
+  $\qquad$ 
+1)  On a $\Vert \I+2\J+4\K \Vert=\sqrt{21}$, donc 
+  $${\bf x}=\frac{8}{\sqrt{21}}(\I+2\J+4\K)= \frac{8}{\sqrt{21}}\I+\frac{16}{\sqrt{21}}\J+\frac{32}{\sqrt{21}}\K.$$
+  2) De la m\^eme facon, $\Vert -\I+2\J+3\K \Vert=\sqrt{14}$, donc
+  $${\bf x}=\frac{5}{\sqrt{14}}(\I-2\J-3\K)= \frac{5}{\sqrt{14}}\I+\frac{-10}{\sqrt{14}}\J+\frac{-15}{\sqrt{14}}\K.$$
+\end{cor}
+\color{black}
+\fi
+\begin{exo}
+ Se donnant ${\bf a}=(5,4,-3)$ et ${\bf b}=(2,-1,2)$ trouver
+ $$({\bf a}+2{\bf b}).(2{\bf a}-{\bf b}). $$
+\end{exo}
+\ifcorrige
+\color{magenta}
+\begin{cor}
+  $\qquad$ 
+  On trouve ${\bf a}+2{\bf b}=(9,2,1)$, $2{\bf a}-{\bf b}=(8,9,-8)$, d'o\`u
+  $$({\bf a}+2{\bf b}).(2{\bf a}-{\bf b})=72+18-8=82. $$
+\end{cor}
+\color{black}
+\fi
+\begin{exo}
+ Trouver l'angle entre les vecteurs ${\bf a}=\I-\J+3\K$ et ${\bf b}=\I+2\J+2\K$.
+\end{exo}
+\ifcorrige
+\color{magenta}
+\begin{cor}
+  $\qquad$ 
+  On calcule ${\bf a}.{\bf b}=5$ puis $\Vert {\bf a} \Vert^2=11$, $\Vert {\bf b} \Vert^2=9$, ainsi
+  $$\cos(\theta)=\frac{{\bf a}.{\bf b} }{\Vert {\bf a} \Vert \Vert {\bf b} \Vert}=\frac{5}{3\sqrt{11}},\ \theta=\arccos\left(\frac{5}{3\sqrt{11}} \right).$$
+\end{cor}
+\color{black}
+\fi
+\begin{exo}
+ Montrer que les vecteurs ${\bf a}=2\I-3\J+\K$ et ${\bf b}=2\I+\J-\K$ sont orthogonaux.
+\end{exo}
+\ifcorrige
+\color{magenta}
+\begin{cor}
+  $\qquad$ 
+  On a ${\bf a}.{\bf b}=4-3-1=0$, ces vecteurs sont donc orthogonaux.
+\end{cor}
+\color{black}
+\fi
+\begin{exo} Se donnant quatre points $A=(1,1,1)$, $B=(0,2,5)$, $C=(-3,3,2)$ et $D=(-1,1,-6)$ dans $\mathbb R^3$, calculer l'angle entre les vecteurs
+$\overrightarrow{AB} $ et $\overrightarrow{CD}$. Interpr\'etation g\'eom\'etrique.
+\end{exo}
+ \ifcorrige
+\color{magenta}
+\begin{cor}
+  $\qquad$ 
+  On a $\overrightarrow{AB}=(-1,1,4)$ et $\overrightarrow{CD}=(2,-2,-8)$. Puis on obtient
+  $\Vert \overrightarrow{AB} \Vert^2=18$ et $\Vert \overrightarrow{CD} \Vert^2=72$. Le produit scalaire
+  $$\overrightarrow{AB}.\overrightarrow{CD}=-36. $$
+  Si $\theta$ est l'angle entre $\overrightarrow{AB} $ et $\overrightarrow{CD}$, on a
+  $$\cos(\theta)=-\frac{36}{\sqrt{18\times 72}} =-1,$$
+  donc $\theta=\pi$, et les vecteurs  $\overrightarrow{AB} $ et $\overrightarrow{CD}$ sont donc colinéaires. On déduit de ceci que les quatres points $A,B,C,D$ sont coplanaires (dans un m\^eme plan affine).
+\end{cor}
+\color{black}
+\fi
+
+\begin{exo} Se donnant ${\bf a}=\I+\lambda \J+3\K$ et ${\bf b}=2\I-\J+5\K$, trouver la valeur de $\lambda$ pour que ${\bf a}$ et $\bf b$ soient orthogonaux.
+\end{exo}
+\ifcorrige
+\color{magenta}
+\begin{cor}
+  $\qquad$ 
+  On a ${\bf a}.{\bf b}=0$ ssi $2-2\lambda+15=0$ et donc $\lambda=17/2$.
+\end{cor}
+\color{black}
+\fi
+\begin{exo} Se donnant ${\bf a}=(2,1,-3)$ et ${\bf b}=(3,-2,1)$ calculer ${\bf a}\wedge {\bf b}$ ainsi que $\Vert {\bf a}\wedge {\bf b} \Vert$.
+\end{exo}
+\ifcorrige
+\color{magenta}
+\begin{cor}
+  $\qquad$ 
+  La m\'ethode usuelle des produits en croix donne ${\bf a}\wedge {\bf b}=(-5,-11,-7)$, puis on a 
+  $ \Vert {\bf a}\wedge {\bf b} \Vert^2=195$.
+\end{cor}
+\color{black}
+\fi
+
+\begin{exo}
+Sachant que les vecteurs $\bf a$ et $\bf b$ v\'erifient $\Vert {\bf a}\Vert=4$, $\Vert {\bf b}\Vert=5$ et ${\bf a}.{\bf b}=-6$, trouver $\Vert {\bf a}\wedge {\bf b} \Vert$.
+\end{exo}
+\ifcorrige
+\color{magenta}
+\begin{cor}
+  $\qquad$ 
+  
+  On sait que $${\bf a}\wedge {\bf b}=\Vert {\bf a }\Vert \Vert {\bf b }\Vert \sin(\theta) \vec{n},$$
+  o\`u $\vec{n}$ est le vecteur directement orthonormal au plan (orient\'e) d\'efini par les vecteurs ${\bf a},{\bf b}$, et o\`u $\theta$ est l'angle entre ${\bf a},{\bf b}$.
+  On a donc
+  $$\Vert  {\bf a}\wedge {\bf b} \Vert= 20 \vert \sin \theta \vert.$$
+  Mais 
+  $$\cos\theta =\frac{{\bf a }.{\bf b}}{ \Vert {\bf a} \Vert \Vert {\bf b} \Vert}=-3/10.$$
+  En utilisant $\cos^2 \theta+\sin^2\theta=1$, on a
+  $$ \vert \sin \theta \vert=\sqrt{1-9/100}=\frac{\sqrt{91}}{10},$$
+  d'o\`u
+  $$ \Vert  {\bf a}\wedge {\bf b} \Vert=2\sqrt{91}.$$
+  On peut aussi interpr\'eter $  \Vert  {\bf a}\wedge {\bf b} \Vert$ comme l'aire du parall\'elogramme d\'efini par ${\bf a},{\bf b}$.
+\end{cor}
+\color{black}
+\fi
+
+
+
+
+
+
+
+
+
+
+\end{document}

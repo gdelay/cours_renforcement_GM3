@@ -1,0 +1,196 @@
+\documentclass[12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[frenchb]{babel}
+\usepackage{amsfonts,amssymb,amsmath,amsthm}
+\usepackage{xcolor}
+\usepackage{multicol}
+\usepackage{geometry}
+\geometry{hmargin=3cm, vmargin=3cm}
+%
+\pagestyle{empty}
+%
+\newtheorem{exercice}{\bf Exercice}
+\newtheorem{correction}{\bf Correction exercice}
+\newenvironment{exo}{
+%\vskip .1cm
+\begin{exercice}\smallskip\normalfont}{\end{exercice}
+%\vskip .1cm
+}
+\newenvironment{cor}{
+%\vskip .1cm
+\begin{correction}\smallskip\normalfont}{\end{correction}
+%\vskip .1cm
+}
+ 
+
+
+\def\titre{\centerline{
+\hfill \begin{tabular}{r}
+{\bf Polytech Sorbonne - GM3} \hspace{3cm} 
+{\bf Renforts en Math\'ematiques - Ann\'ee 2022-2023} \\ \\{}\end{tabular}     } 
+}
+
+
+\newif\ifcorrige\corrigetrue
+%\newif\ifcorrige\corrigefalse 
+\begin{document}
+\titre
+\begin{center}
+  \underline{\LARGE Calcul Matriciel}
+\end{center}
+\vskip .5cm 
+  
+\begin{exo} Pour chacune des matrices $M$ suivantes, donner leur ordre et calculer leur transpos\'ee $M^T$.
+\begin{multicols}{3}
+\begin{enumerate}
+\item $M=\left ( \begin{array}{cc} 1&0\\0&6    \end{array}     \right)$
+\item $M=\left ( \begin{array}{ccc} 1&4&7   \end{array}     \right)$
+\item $M=\left ( \begin{array}{cc} 0&3\\-4&0  \end{array}     \right)$
+\item $M=\left ( \begin{array}{ccc} 1&0&3\\0&1&4  \end{array}     \right)$
+\item $M=\left ( \begin{array}{ccc} 5&0&0\\0&1&0\\0&0&1  \end{array}     \right)$
+\item $M=\left ( \begin{array}{ccc} 1&0&0\\0&1&0\\0&0&1  \end{array}     \right)$
+
+\end{enumerate}
+\end{multicols}
+\end{exo}
+
+%%%%%%%%%%%%%%%%%
+\ifcorrige
+\color{magenta}
+\begin{cor}
+  $\qquad$ Facile.
+\end{cor}
+\color{black}
+\fi
+
+
+%%%%%%%%%%%%%%%%
+
+\begin{exo}
+Montrer que si $M$ est une matrice carr\'ee, $M+M^T$ est sym\'etrique et $M-M^T$ est antisym\'etrique.
+\end{exo}
+
+\ifcorrige
+\color{magenta}
+\begin{cor}
+  $\qquad$ On a $(M+M^T)^T=M^T+(M^T)^T=M+M^T$. De m\^eme, $(M-M^T)^T=M^T-(M^T)^T=-M+M^T=-(M+M^T)$.
+\end{cor}
+\color{black}
+\fi
+
+\begin{exo}
+Trouver les valeurs du param\`etre $k$ pour lequelles $C=A+B$ est une matrice sym\'etrique, avec
+$$A= \left ( \begin{array}{ccc} 1&5&7\\k^2&4&0\\0&2&6  \end{array}     \right),\ B= \left ( \begin{array}{ccc} 0&7&1\\3&1&-k\\8&k+4&-1  \end{array}     \right).$$
+\end{exo}
+\ifcorrige
+\color{magenta}
+\begin{cor}
+  $\qquad$ Apr\`es calcul, on a $(A+B)^T=A+B$ ssi $k^2+3=12$ et $k+6=-k$, donc la seule solution est $k=-3$.
+\end{cor}
+\color{black}
+\fi
+\begin{exo}
+ Trouver les matrices $A$ et $B$ telles que
+ $$A+B=\left ( \begin{array}{cc} 2&5\\9&0    \end{array}     \right),$$
+ et
+ $$A-B=\left ( \begin{array}{cc} 6&3\\-1&0    \end{array}     \right).$$
+\end{exo}
+\ifcorrige
+\color{magenta}
+\begin{cor}
+  $\qquad$ En calculant somme et diff\'erence on trouve que
+  $$2A=\left ( \begin{array}{cc} 8&8\\8&0    \end{array}     \right),\ 2B=\left ( \begin{array}{cc} -4&2\\10&0    \end{array}     \right),$$
+  donc on a
+  $$A=\left ( \begin{array}{cc} 4&4\\4&0    \end{array}     \right),\ B=\left ( \begin{array}{cc} -2&1\\5&0    \end{array}     \right).$$
+  \end{cor}
+\color{black}
+\fi
+\begin{exo}
+Soient $A$ et $B$ telles que
+ $$A=\left ( \begin{array}{cc} 1&1\\1&1    \end{array}     \right),$$
+ et
+ $$B=\left ( \begin{array}{cc} 1&-1\\-1&1    \end{array}     \right).$$
+ Calculer $AB$ et $BA$.
+\end{exo}
+\ifcorrige
+\color{magenta}
+\begin{cor}
+  $\qquad$ On trouve $AB=BA=0$
+  
+    \end{cor}
+\color{black}
+\fi
+\begin{exo}
+Soient $A$ et $B$ telles que
+ $$A=\left ( \begin{array}{cc} 2&3\\1&-4    \end{array}     \right),$$
+ et
+ $$B=\left ( \begin{array}{cc} 5&6\\7&8    \end{array}     \right).$$
+ Calculer $(A+B)^2$.
+\end{exo}
+\ifcorrige
+\color{magenta}
+\begin{cor}
+  $\qquad$ On trouve 
+  $$(A+B)^2=\left ( \begin{array}{cc} 121&99\\88&88    \end{array}     \right)  $$
+  
+    \end{cor}
+\color{black}
+\fi
+\begin{exo}
+Soient $A$ et $B$ telles que
+ $$A=\left ( \begin{array}{cc} 2&3\\1&-4    \end{array}     \right),$$
+ et
+ $$B=\left ( \begin{array}{cc} 5&6\\7&8    \end{array}     \right).$$
+ V\'erifier que $(AB)^T=B^TA^T$.
+\end{exo}
+\ifcorrige
+\color{magenta}
+\begin{cor}
+  $\qquad$ Il n'y a qu'\`a calculer.
+\end{cor}
+\color{black}
+\fi
+
+\begin{exo}
+Calculer l'inverse des matrices $A$ et $B$ suivantes.
+ $$A=\left ( \begin{array}{cc} 1&2\\1&1   \end{array}     \right),$$
+ et
+ $$B=\left ( \begin{array}{ccc} 1&3&3\\1&4&3\\ 1&3&4  \end{array}     \right).$$
+ 
+\end{exo}
+\ifcorrige
+\color{magenta}
+\begin{cor} Pour inverser $A$ on se ram\`ene \`a r\'esoudre le syst\`eme lin\'eaire suivant, d'inconnues $x,y$ et $x',y'$ sont des param\`etres.
+$$\left \{ x+2y=x' \atop x+y=y' \right. .$$
+En r\'esolvant par substitution on trouve 
+$$\left \{ x=-x'+2y \atop y=x'-y' \right. ,$$
+et donc $A^{-1}=\left ( \begin{array}{cc} -1&2\\1&-1   \end{array}     \right)$. Pour inverser $B$, on fait la m\^eme chose (plus long), on r\'esoud
+$$\left \{ \begin{array}{ccc}x+3y+3z&=&x'\\ x+4y+3z&=&y'\\ x+3y+4z&=&z' \end{array} \right. .$$
+On trouve alors
+$$ B^{-1}=\left ( \begin{array}{ccc} 7&-3&-3\\-1&1&0\\ -1&0&1  \end{array}     \right).$$
+  $\qquad$   
+    \end{cor}
+\color{black}
+\fi
+
+
+\begin{exo} Pour tout $\theta \in \mathbb{R}$, on consid\`ere la matrice suivante
+$$A(\theta)=\left ( \begin{array}{cc} \cos(\theta)&\sin(\theta)\\-\sin(\theta)&\cos(\theta)  \end{array}     \right).$$
+Montrer que $A(\theta)A^T(\theta)=I$. En d\'eduire $A^{-1}$. Montrer ensuite que 
+$$A(\theta_1)A(\theta_2)=A(\theta_1+\theta_2).$$
+\end{exo}
+\ifcorrige
+\color{magenta}
+\begin{cor}   $\qquad$   
+L'identit\'e $\cos^2(\theta)+\sin^2(\theta)=1$ montre directement que
+$$A A^T= \left ( \begin{array}{cc} 1&0\\0&1   \end{array}     \right)=I,$$
+donc $A^{-1}(\theta)=A^T(\theta)=A(-\theta)$. Un calcul donne
+$$A(\theta_1)A(\theta_2)= \left ( \begin{array}{cc} \cos\theta_1\cos\theta_2-\sin\theta_1\sin\theta_2&\cos\theta_1 \sin\theta_1+\sin\theta_1 \cos\theta_2\\ -\cos\theta_1 \sin\theta_1-\sin\theta_1 \cos\theta_2&  \cos\theta_1\cos\theta_2-\sin\theta_1\sin\theta_2  \end{array}     \right),$$
+Les formules d'addition donnent alors 
+$$ A(\theta_1)A(\theta_2)=\left ( \begin{array}{cc} \cos(\theta_1+\theta_2)&\sin(\theta_1+\theta_2)\\ -\sin(\theta_1+\theta_2)&\cos(\theta_1+\theta_2)  \end{array}     \right)=A(\theta_1+\theta_2).$$
+    \end{cor}
+\color{black}
+\fi
+
+\end{document}
