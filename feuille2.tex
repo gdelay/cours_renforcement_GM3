@@ -16,7 +16,8 @@
 \newtheorem{correction}{\bf Correction exercice}
 \newenvironment{exo}{
 %\vskip .1cm
-\begin{exercice}\smallskip\normalfont}{\end{exercice}
+%  \begin{exercice}\smallskip\normalfont}{\end{exercice}
+  \begin{exercice}\normalfont}{\end{exercice}
 %\vskip .1cm
 }
 \newenvironment{cor}{
@@ -42,7 +43,7 @@
 \begin{center}
   \underline{\LARGE Fonctions r\'eelles d'une variable r\'eelle}
 \end{center}
-\vskip .5cm 
+%\vskip .5cm 
   
 \begin{exo} Donner le domaine de d\'efinition des fonctions suivantes:
 \begin{multicols}{5}
@@ -427,7 +428,7 @@ Dans tout cet exercice, on utilise $\ln(a \times b) = \ln a + \ln b$ et $\ln(a^n
 \fi
 
 %%%%%%%%%%%%%%%%
-\newpage
+%\newpage
 
 \begin{exo} R\'esoudre les \'equations suivantes:
 \begin{multicols}{3}
@@ -710,6 +711,100 @@ $\qquad$
   et donc
   $\arctan'(\tan(x)) (1+\tan^2(x)) = 1$
   et donc $\arctan'(x) = \frac{1}{1+x^2}$.
+\end{enumerate}
+\end{cor}
+\color{black}
+\fi
+
+%%%%%%%%%%%%%%%%
+
+\begin{exo} Donner les DL en $0$ à l'ordre $2$ des fonctions suivantes:
+\begin{multicols}{4}
+\begin{enumerate}
+\item $\frac{5x^4 - 4 x^3 - 3x}{x}$
+\item $\frac{\cos(x)-1}{x}$
+\item $\frac{\sin(x)}{x+1}$
+\item $\frac{\cos(x)e^x}{1-x}$
+\end{enumerate}
+\end{multicols}
+\end{exo}
+
+%%%%%%%%%%%%%%%%%
+\ifcorrige
+\color{magenta}
+\begin{cor}
+$\qquad$
+\begin{enumerate}
+\item Cette expression peut se simplifier en $5x^3 - 4x^2 -3$.
+  En $0$, le terme $5x^3$ est d'ordre strictement supérieur à 2.
+  On a donc $5x^3 - 4x^2 -3 = -3 - 4x^2 + O(x^3)$.
+
+\item Le terme $\cos(x)-1$ est divisé par $x$. Il faut donc un DL à l'ordre 3 de $\cos(x)-1$.
+  Si on ne connait pas par coeur le DL de $\cos(x)$, on peut le retrouver 
+  avec la formule de Taylor-Young 
+  (en utilisant le fait que la fonction $\cos$ est $C^{\infty}$) :
+  \begin{align*}
+    \cos(x) = \cos(0) + \cos'(0)x + \frac{\cos''(0) x^2}2 + \frac{\cos^{(3)}(0) x^3}{3!} + O(x^4)
+  \end{align*}
+  En calculant les différents termes, on a
+  \begin{align*}
+    \cos(x) = 1 - \frac{x^2}2 + O(x^4)
+  \end{align*}
+  En soustrayant $1$ et en divisant par $x$ :
+  \begin{align*}
+    \frac{\cos(x)-1}x = - \frac{x}2 + O(x^3)
+  \end{align*}
+\item Le DL de $\sin(x)$ en $0$ à l'ordre 2 vaut
+  \begin{align*}
+    \sin(x)
+    &= \sin(0) + \sin'(0)x + \frac{\sin''(0)x^2}2 + O(x^3)
+    \\
+    &= x + O(x^3)
+  \end{align*}
+  Le DL à l'ordre 2 de $\frac1{1+x}$ en $0$ vaut
+  \begin{align*}
+    f(x) = \frac1{1+x}
+    &= f(0) + f'(0)x + \frac{f''(0)x^2}2 + O(x^3)
+    \\
+    &= 1 - x + x^2 + O(x^3)
+  \end{align*}
+  En multipliant les deux DL :
+  \begin{align*}
+    \frac{\sin(x)}{1+x} 
+    &= (x + O(x^3)) (1-x+x^2+O(x^3))
+    \\
+    &= x - x^2 + O(x^3)
+  \end{align*}
+
+\item On a déjà vu précédemment
+  \begin{align*}
+    \cos(x) 
+    &= 1 - \frac{x^2}2 + O(x^3)
+    \\
+    \frac{1}{1+x} 
+    &= 1 - x + x^2 + O(x^3)
+  \end{align*}
+  En changeant, $x$ en $-x$, on a immédiatement
+  \begin{align*}
+    \frac{1}{1-x} 
+    &= 1 + x + x^2 + O(x^3)
+  \end{align*}
+  De plus, on peut calculer le DL le $e^x$ en $0$ :
+  \begin{align*}
+    e^x = 1 + x + \frac{x^2}{2} + O(x^3)
+  \end{align*}
+  En multipliant ces trois DL, on obtient
+  \begin{align*}
+    \frac{\cos(x)e^x}{1-x} 
+    &= (1-\frac{x^2}{2} + O(x^3)) (1+x+x^2+O(x^3)) (1+x+\frac{x^2}2 + O(x^3))
+    \\
+    &= (1+x+x^2-\frac{x^2}{2}+O(x^3)) (1+x+\frac{x^2}2 + O(x^3))
+    \\
+    &= 1 + x + \frac{x^2}2 + x + x^2 + \frac{x^2}{2} + O(x^3)
+    \\
+    &= 1 + 2x + 2x^2 + O(x^3)
+  \end{align*}
+  
 \end{enumerate}
 \end{cor}
 \color{black}
